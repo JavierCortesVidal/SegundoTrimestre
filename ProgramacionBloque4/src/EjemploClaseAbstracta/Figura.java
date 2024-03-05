@@ -6,7 +6,7 @@ public abstract class Figura {
 	public abstract void colorearInterior();
 	public abstract double calcularArea();
 
-	
+	//a
 	public Figura(String color, int grosorLinea) {
 		this.color = color;
 		this.grosorLinea = grosorLinea;
