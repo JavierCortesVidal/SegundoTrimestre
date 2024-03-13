@@ -1,9 +1,10 @@
 package Relacion10Ejercicio3;
+import java.util.Iterator;
 import java.util.Random;
 
 public class FaltasAlumnosEnAsignaturas {
 	
-	private static final int NUMERO_ALUMNOS = 10;
+	private static final int NUMERO_ALUMNOS = 8;
 	private static final int NUMERO_ASIGNATURAS = 4;
 	
 	
@@ -53,6 +54,51 @@ public class FaltasAlumnosEnAsignaturas {
 				
 			}
 		}
+		
+	}
+	
+	private double mediasRetraso() {
+		int numeroTotalRetrasos=0;
+		double mediaRetrasos=0;
+		
+		for (int i = 0; i < matrizFaltas.length; i++) {
+			for (int j = 0; j < matrizFaltas[0].length; j++) {
+				
+				numeroTotalRetrasos=numeroTotalRetrasos+matrizFaltas[i][j].getRetrasos();
+				
+				
+			}
+		}
+		
+		mediaRetrasos=numeroTotalRetrasos/NUMERO_ALUMNOS;
+		
+		return mediaRetrasos;
+	}
+	
+	public String retrasosSuperioresAMedia() {
+		
+		int faltasAlumno=0;
+		double media= mediasRetraso();
+		
+		StringBuilder alum =new StringBuilder();
+		
+		for (int i = 0; i < matrizFaltas.length; i++) {
+			
+			for (int j = 0; j < matrizFaltas[0].length; j++) {
+				
+				faltasAlumno=faltasAlumno+matrizFaltas[i][j].getRetrasos();
+				
+				
+			}
+			if(faltasAlumno>media) {
+				alum.append("El alumno "+(i+1)+" supera la media: "+media+" de retrasos con un total de: "+faltasAlumno+" retrasos"+" \n");
+				
+			}
+			faltasAlumno=0;
+			
+		}
+		
+		return alum.toString();
 		
 	}
 	

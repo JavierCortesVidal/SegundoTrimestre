@@ -5,7 +5,8 @@ public class Principal {
 		FaltasAlumnosEnAsignaturas faltas=new FaltasAlumnosEnAsignaturas();
 		
 		System.out.println(faltas);
-
+		System.out.println(faltas.retrasosSuperioresAMedia());
 	}
+	
 
 }
